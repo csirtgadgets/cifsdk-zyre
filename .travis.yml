@@ -4,8 +4,8 @@ language: python
 
 python:
   - 2.7
-  - 3.4
-  - 3.5
+#  - 3.4  # pyzyre doesn't work on py3 yet
+#  - 3.5
 
 before_install:
   - pip install pip --upgrade
@@ -23,12 +23,12 @@ notifications:
     on_success: never
     on_failure: never
 
-#deploy:
-#  provider: pypi
-#  user: wesyoung
-#  on:
-#    branch: master
-#    tags: true
-#    condition: $TRAVIS_PYTHON_VERSION = "3.5"
-#  password:
-#    secure: KqAF23ewsgiUfB0VJdtcDz6zizRwWK6MjqpNQ77+PdOLs12/2TVLgjOaXeGt562zhQd15Zh6mCZF+r3uNPaeI0llVKrdn1JlPsH6lNuEXRWnbD5Ou5/RNFDzbkjN0CNEcp/dKvnBiDuADmsgi7E+fX/cCwAnFQDDpynLMS55yTOBC8JcLAcGNfh5L2MpIiINPfoir5O0OvBvNfSzOFi6ktKg0XsFeJ+7pzkyig9HOstO7EH8rge1DmGRmZ34Qcf9/ZwPt7Gk0+h/2uZIYvYigXv3MthueUaZn6KZ9mfP1KyN7g5JyJqJwguODUIvnQsvgDrOjzoHvcrxtjWJQmafO7eYkRjrpPHlJpHiX6GLJqxClB8kjKCH3/s/7O3Oic7wVI/NvxO/Amv4WVNQnabNi0GO9UJEw0fO7CjD/d9Mk8zxqC0q/o8uNrDcE7A2AIAf53L7kh4JPnIaZ2Is9DHOdkbYcRxyMhE5g9Zqad1OKes4LcMKZXHXTdgtUldKf6TaDEf7B2A55JWo5qmqJeBwFzcmdvhxeUAM60yqrJ+ICS5la/ooc6NbEHFo/ZM4POJl7lccErRR9ma/Zadd0vfRww5iWsQKGSj191m5yy1IIstsnf09+X29apPGn/vL4Ag4/9TH9xu/NVIU9u/oLz+mS8WVk6Nj9ftoX0fB2YVH9W0=
+deploy:
+  provider: pypi
+  user: wesyoung
+  on:
+    branch: master
+    tags: true
+    condition: $TRAVIS_PYTHON_VERSION = "3.5"
+  password:
+    secure: KqAF23ewsgiUfB0VJdtcDz6zizRwWK6MjqpNQ77+PdOLs12/2TVLgjOaXeGt562zhQd15Zh6mCZF+r3uNPaeI0llVKrdn1JlPsH6lNuEXRWnbD5Ou5/RNFDzbkjN0CNEcp/dKvnBiDuADmsgi7E+fX/cCwAnFQDDpynLMS55yTOBC8JcLAcGNfh5L2MpIiINPfoir5O0OvBvNfSzOFi6ktKg0XsFeJ+7pzkyig9HOstO7EH8rge1DmGRmZ34Qcf9/ZwPt7Gk0+h/2uZIYvYigXv3MthueUaZn6KZ9mfP1KyN7g5JyJqJwguODUIvnQsvgDrOjzoHvcrxtjWJQmafO7eYkRjrpPHlJpHiX6GLJqxClB8kjKCH3/s/7O3Oic7wVI/NvxO/Amv4WVNQnabNi0GO9UJEw0fO7CjD/d9Mk8zxqC0q/o8uNrDcE7A2AIAf53L7kh4JPnIaZ2Is9DHOdkbYcRxyMhE5g9Zqad1OKes4LcMKZXHXTdgtUldKf6TaDEf7B2A55JWo5qmqJeBwFzcmdvhxeUAM60yqrJ+ICS5la/ooc6NbEHFo/ZM4POJl7lccErRR9ma/Zadd0vfRww5iWsQKGSj191m5yy1IIstsnf09+X29apPGn/vL4Ag4/9TH9xu/NVIU9u/oLz+mS8WVk6Nj9ftoX0fB2YVH9W0=
