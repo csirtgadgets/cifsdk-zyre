@@ -11,8 +11,6 @@ if os.environ.get('USER') == 'vagrant' or os.path.isdir('/vagrant'):
 if sys.argv[-1] == 'test':
     test_requirements = [
         'pytest',
-        'coverage',
-        'pytest_cov',
     ]
     try:
         modules = map(__import__, test_requirements)
