@@ -1,0 +1,23 @@
+sudo: required
+dist: trusty
+language: python
+python:
+    - 2.7
+    - 3.4
+    - 3.5
+
+
+install:
+  - pip install -r dev_requirements.txt
+
+script:
+  - python setup.py test
+  - python setup.py sdist bdist bdist_wheel
+  - sudo apt-get install build-essential virtualenvwrapper python-virtualenv devscripts debhelper cdbs
+  - make deb
+  - "cp ./pyinstaller-build/dist/cif ~/ && cd ~/ && ./cif -V"
+
+notifications:
+    email:
+        on_success: never
+        on_failure: never
