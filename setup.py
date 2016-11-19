@@ -46,6 +46,7 @@ setup(
     author_email="wes@csirtgadgets.org",
     packages=find_packages(),
     install_requires=[
+        'cython>=.20',
         'cifsdk',
         'pyzyre',
         'pyzmq',
