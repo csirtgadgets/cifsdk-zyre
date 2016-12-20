@@ -38,7 +38,7 @@ class Zyre(object):
         self.task = zactor_fn(task)
 
         actor_args = [
-            'channel=%s' % self.group,
+            'group=%s' % self.group,
             'beacon=1',
         ]
 
